@@ -11,9 +11,9 @@ $wmd_mysql->active();
 $wmd_mysql
         ->collection('contacts')
         ->persists([
-                'name' => 'Leonardo Tumadjian',
-                'cel' => '5555-5555',
-                'address' => '330th Eleven street'
+            'name' => 'Leonardo Tumadjian',
+            'cel' => '5555-5555',
+            'address' => '330th Eleven street'
         ]);
 
 /* It should produce at first time:
@@ -33,9 +33,9 @@ $wmd_mysql
 $wmd_mysql
         ->collection('contacts')
         ->persists([
-                'name' => 'Matt Miller',
-                'cel' => '2222-2222',
-                'address' => '11th Seven street'
+            'name' => 'Matt Miller',
+            'cel' => '2222-2222',
+            'address' => '11th Seven street'
         ]);
 
 // Second insert
@@ -48,10 +48,10 @@ $wmd_mysql
 $wmd_mysql
         ->collection('contacts')
         ->persists([
-                'name' => 'John Doe',
-                'cel' => '3333-3333',
-                'address' => '14th Quarter Street',
-                'new_field' => 'Wow!!'
+            'name' => 'John Doe',
+            'cel' => '3333-3333',
+            'address' => '14th Quarter Street',
+            'new_field' => 'Wow!!'
         ]);
 
 // Second insert
@@ -70,8 +70,7 @@ Static migration:
 wmd static-migration
 ```
 
-Stream:
-
+Will stream: contacts_migration.php
 ```sql
 CREATE TABLE `contacts`
 (
@@ -79,6 +78,7 @@ CREATE TABLE `contacts`
     `name` varchar(220) not null,
     `cel` varchar(220) not null,
     `address` varchar(220) not null,
+    `new_field` varchar(220) not null,
     constraint `pk_contacts` primary key (id)
 );
 ```
