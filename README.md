@@ -3,7 +3,10 @@ Write data in a flexible way
 
 # Propose
 ```php
-$wmd_mysql = new WriteMyData(new MysqlWrite($pdo, new MysqlDefaultPersistence));
+use WriteMyData\Mysql\Write;
+use WriteMyData\Mysql\DefaultPersistence;
+
+$wmd_mysql = new WriteMyData(new Write($pdo, new DefaultPersistence));
 
 // Make the migration on the fly
 $wmd_mysql->active();
